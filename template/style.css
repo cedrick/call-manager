@@ -1,0 +1,139 @@
+/* CSS Document */
+body {
+				margin:0;
+				font-family:Arial, Helvetica, sans-serif;
+				font-size: 13px;
+     }
+
+.header{ 
+				 background-image:url(images/gradient.png); 
+				 background-repeat:repeat-x;
+				 height:78px;
+			 }
+.liner{ 
+				border-top:1px solid gray;
+       }
+
+	   
+	   
+.footer{ 
+					border-top:1px solid gray;
+					clear: both;
+					color: #9EC1CF;
+					font-size: 11px;
+					text-align: center;
+				}
+
+.login {
+			 height: 250px;
+			 width: 366px;
+			}
+
+.top {
+    background-color: #7B7A79;
+    height: 20px;
+    width: 366px;
+}
+
+.logback {
+    background-color: #e8fcb3;
+    height: 240px;
+    width: 366px;
+}
+
+.view_main{
+	background-color: #e8fcb3;
+    width:607px;
+    height:25px;
+}
+
+
+.view_main a:visited {	background-color:#9FF;
+}
+
+
+.call{
+	float:right;
+	margin-top:-75px;
+	margin-right:20px;
+	width:403px;
+    height:78px;
+}
+
+
+.button_search{
+		float:right;
+		margin-top:0px;
+		margin-right:0px;
+		width:68px;
+	    height:23px;
+}
+
+
+.logout{
+		float:right;
+		margin-top:-20px;
+		margin-right:300px;
+		width:174px;
+	    height:19px;
+}
+
+.content{
+padding:10px;
+width:591px;
+height:199px;
+border-top:1px solid gray;
+border-bottom:1px solid gray;
+}
+.left{
+width:150px;
+float:left;
+padding:7px 0px 0px 7px;
+min-height:24px;
+}
+.right{
+width:200px;
+float:left;
+padding:5px;
+min-height:24px;
+}
+.clear{
+float:none;
+clear:both;
+height:0px;
+}
+.row{
+background-color:none;
+display:block;
+min-height:32px;
+}
+.text{
+width:190px;
+}
+.ruler{
+width:400px; border-bottom:dashed 1px #dcdcdc;
+}
+tr:focus{
+background-color:#fcfcf0;
+}
+td{
+vertical-align:top;
+}
+.over{
+background-color:#ECE9D8;
+}
+.out{
+background-color:none;
+}
+
+.button{
+background-color:none;
+display:block;
+min-height:32px;
+}
+.remarks{
+background-color:none;
+display:block;
+width:795px;
+}
+
