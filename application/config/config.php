@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://191.168.3.243/call-manager/';
+$config['base_url']	= 'http://spas12/campaigns/ae-inbound/call-manager/';
 
 /*
 |--------------------------------------------------------------------------

@@ -43,7 +43,7 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
-$db['default']['password'] = '';
+$db['default']['password'] = 'mysql-spas12';
 $db['default']['database'] = 'call_manager';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
