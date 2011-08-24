@@ -512,6 +512,7 @@ $(document).ready(function(){
 	</table>
 </div>
 <br>
+<div class = "sec_b"><font color="#000000" face = "Arial Black" size = "3">Account Information</font></div>
 <div class= "grp_b">
 	<table align ="center">
 		<tr>
@@ -720,11 +721,12 @@ $(document).ready(function(){
 	</table>
 </div>
 <br>
+<div class = "sec_c"><font color="#000000" face = "Arial Black" size = "3">Remarks/Notes</font></div>
 <div class = "grp_c">
 	<table align ="center">
 		<tr>
 			<td>
-				Remarks:
+				
 			</td>
 			<td>
 				<?php echo form_textarea($remarks); ?>
