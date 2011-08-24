@@ -30,14 +30,15 @@
 ?>
 <div class="login" style="margin-left:400px;">
 <ul style="list-style:none;">
-<div class="top" align="center" style="border-style:solid; border-color:#A7C198; background-color: #7B7A79; height:20px; width:366px;"><font color="#FFFFFF" face="Arial">User Registration</font></div>
-<div class="logback" style="border-style:solid; border-color:#A7C198; background-color:#E8FCB3; height:220px;width:366px;">
+<div class="top" align="center" style="border-style:solid; border-color:#E0E3E2; background-color: #ABADAC; height:20px; width:366px;"><font color="#000000" face = "Arial Black" size = "3">User Registration</font></div>
+<div class="logback" style="border-style:solid; border-color:#E0E3E2; background-color:#ABADAC; height:220px;width:366px;">
 <div class="welcome" align = center>
-  <font color=#666666 face="Arial">
+  <font color="#000000" face = "Arial" >
     Welcome to NorthStar Solutions INC. Web-Based Call Manager.To Register, please input your username and password. 
   </font>
 </div>
 <br />
+<div  align="center" style=" background-color: #FFFFFF;height:108px;width: 350px; margin-left:7px; -moz-border-radius: 15px;border-radius:15px;">
 <table align="center">
 
   <tr>
@@ -98,6 +99,7 @@
      </td>
    </tr>
 </table>
+</div>
 </div>
 </ul>
 </div>

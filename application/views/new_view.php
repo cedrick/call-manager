@@ -1,4 +1,5 @@
 
+<br>
 <?php 
 
 if(isset($msg))
@@ -6,11 +7,26 @@ if(isset($msg))
 //echo $msg;
 	echo "<script type='text/javascript'>";
 		echo "alert('$msg');";
-		echo "window.location = 'http://191.168.3.243/call-manager/user/call/';";
+		echo "window.location = 'http://spas12/campaigns/ae-inbound/call-manager/';";
 echo "</script>"; 
 }
 ?>
-
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#but").click(function(){
+	
+		$(function() {
+			// a workaround for a flaw in the demo system (http://dev.jqueryui.com/ticket/4375), ignore!
+			//$( "#box" ).dialog( "destroy" );
+		
+			$( "#box" ).dialog({
+				height: 140,
+				modal: true
+			});
+		});
+	});
+});
+</script> 
 <?php 
 	
 
@@ -185,7 +201,7 @@ echo "</script>";
 				              'value'       => isset($_POST['remarks']) ? $_POST['remarks'] : (isset($row->remarks) ? $row->remarks : ''),
 				              'maxlength'   => '',
 				              'size'        => '100',
-				              'style'       => 'width:300%',
+				              'style'       => 'width:110%',
 
 				            );
 				            
@@ -298,198 +314,449 @@ echo "</script>";
 			}
 	?>
 
-<div style="float:left; margin-right:20px; margin-top:-1px;">
-	<div class="content">
-		<div class="row">
-			<div class="left">Phone Number:</div>
-			<div class="right"><?php echo $phonenumber; ?></div>
-			<div class="clear"></div>
-		</div>
-		<div class="row">
-			<div class="left">Last Call Date:</div>
-			<div class="right"><?php echo isset($row->last_call) ? $row->last_call : ''; ?></div>
-			<div class="clear"></div>
-		</div>
-		<div class="row">
-			<div class="left">First Name:</div>
-			<div class="right"><?php echo form_input($first_name);  ?></div>
-			<div class="clear"></div>
-		</div>
-		<div class="row">
-			<div class="left">Last Name</div>
-			<div class="right"><?php echo form_input($last_name); ?></div>
-			<div class="clear"></div>
-		</div>
-		<div class="row">
-			<div class="left">Email:</div>
-			<div class="right"><?php echo form_input($email); ?></div>
-			<div class="clear"></div>
-		</div>
-	</div>
-</div>
-<!- Other rows here -->
-<div style="float:right; margin-right:20px; margin-top:-2px;">
-	<div class="content">
-			<div class="row" <?php echo $wg_txtbg; ?>>
-			<div class="left">
-						Workgroup:
-			</div>
-			<div class="right">
-						<?php 
-						$sale = FALSE;
-						$spanish = FALSE;
-						$renewal = FALSE;
-						$payment = FALSE;
-						if(isset($_POST['work_group'])) {
-							switch ($_POST['work_group']) {
-								case 'New Sales':
-									$sale = TRUE;
-									break;
-								case 'Spanish':
-									$spanish = TRUE;
-									break;
-								case 'Renewal':
-									$renewal = TRUE;
-									break;
-								case 'Payment':
-									$payment = TRUE;
-									break;
-							}
-							
-						} elseif (isset($row->workgroup)) {
-							switch ($row->workgroup) {
-								case 'New Sales':
-									$sale = TRUE;
-									break;
-								case 'Spanish':
-									$spanish = TRUE;
-									break;
-								case 'Renewal':
-									$renewal = TRUE;
-									break;
-								case 'Payment':
-									$payment = TRUE;
-									break;
-							}
-						}
-							echo "New&nbsp;Sales:";echo form_radio('work_group','New Sales',$sale,$action_js);echo"&nbsp;&nbsp;&nbsp;Spanish:";echo form_radio('work_group','Spanish',$spanish,$action_js);
-							
-						?>
+<div class= "grp_a">
+	<table align ="center">
+		<tr>
+			<td>
+				Phone Number:
+			</td>
+			<td>
+				<?php echo $phonenumber; ?>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td <?php echo $wg_txtbg; ?>>
 				
-			</div>
-			<div class="clear"></div>
-		</div>
-		<div class="row" <?php echo $wg_txtbg; ?>>
-			<div class="left"></div>
-			<div class="right"><?php echo"Renewal:";echo form_radio('work_group','Renewal', $renewal,$action_js);echo"&nbsp;&nbsp;&nbsp;Payment:";echo form_radio('work_group','Payment',$payment,$action_js); ?>
-			</div>
-			<div class="clear"></div>
-		</div>
-		<div class="row" <?php echo $utility_txtbg; ?>>
-			<div class="left">Utility:</div>
-			<div class="right">
+				Workgroup:
+			</td>
+			<td>
+							<?php 
+							$sale = FALSE;
+							$spanish = FALSE;
+							$renewal = FALSE;
+							$payment = FALSE;
+							if(isset($_POST['work_group'])) {
+								switch ($_POST['work_group']) {
+									case 'New Sales':
+										$sale = TRUE;
+										break;
+									case 'Spanish':
+										$spanish = TRUE;
+										break;
+									case 'Renewal':
+										$renewal = TRUE;
+										break;
+									case 'Payment':
+										$payment = TRUE;
+										break;
+								}
+								
+							} elseif (isset($row->workgroup)) {
+								switch ($row->workgroup) {
+									case 'New Sales':
+										$sale = TRUE;
+										break;
+									case 'Spanish':
+										$spanish = TRUE;
+										break;
+									case 'Renewal':
+										$renewal = TRUE;
+										break;
+									case 'Payment':
+										$payment = TRUE;
+										break;
+								}
+							}
+								echo "New&nbsp;Sales:";echo form_radio('work_group','New Sales',$sale,$action_js);echo"&nbsp;&nbsp;&nbsp;Spanish:";echo form_radio('work_group','Spanish',$spanish,$action_js);
+								
+							?>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Last Call Date:
+			</td>
+			<td>
+				<?php echo isset($row->last_call) ? $row->last_call : ''; ?>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+				<?php echo"Renewal:";echo form_radio('work_group','Renewal', $renewal,$action_js);echo"&nbsp;&nbsp;&nbsp;Payment:";echo form_radio('work_group','Payment',$payment,$action_js); ?>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				First Name:
+			</td>
+			<td>
+				<?php echo form_input($first_name);  ?>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td <?php echo $utility_txtbg; ?>>
+				Utility:
+			</td>
+			<td>
 				<?php echo form_dropdown('utility',$dropdown_callutility, isset($_POST['utility']) ? $_POST['utility']:(isset($row->utility) ? $row->utility:'')); ?>
-			</div>
-			<div class="clear"></div>
-		</div>
-		<div class="row" <?php echo $origin_txtbg;?>>
-			<div class="left">Call Origin:</div>
-			<div class="right"><?php echo form_dropdown('call_origin',$dropdown_callorigin, isset($_POST['call_origin']) ? $_POST['call_origin']:(isset($row->call_origin) ? $row->call_origin:''));?></div>
-			<div class="clear"></div>
-		</div>
-		<div class="row" <?php echo $offered_txtbg;?>>
-			<div class="left">Promo Offered:</div>
-			<div class="right"><?php echo form_dropdown('promo_offered',$dropdown_callpromo, isset($_POST['promo_offered']) ? $_POST['promo_offered']:(isset($row->promo_offered) ? $row->promo_offered:''));?></div>
-			<div class="clear"></div>
-		</div>
-		<div class="row" <?php echo $source_txtbg;?>>
-			<div class="left">Source:</div>
-			<div class="right"><?php echo form_dropdown('source',$dropdown_callsource, isset($_POST['source']) ? $_POST['source']:(isset($row->source) ? $row->source:'')); 
-			 ?></div>
-			<div class="clear"></div>
-			</div>
-	</div>
+			</td>
+		</tr>	
+		<tr>
+			<td>
+				Last Name:
+			</td>
+			<td>
+				<?php echo form_input($last_name); ?>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td <?php echo $origin_txtbg;?>>
+				Call Origin:
+			</td>
+			
+			<td>
+				<?php echo form_dropdown('call_origin',$dropdown_callorigin, isset($_POST['call_origin']) ? $_POST['call_origin']:(isset($row->call_origin) ? $row->call_origin:''));?>		
+			</td>
+		</tr>	
+		<tr>
+			<td>
+				Email:
+			</td>
+			<td>
+				<?php echo form_input($email); ?>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td <?php echo $offered_txtbg;?>>
+				Promo Offered:
+			</td>
+			
+			<td>
+				<?php echo form_dropdown('promo_offered',$dropdown_callpromo, isset($_POST['promo_offered']) ? $_POST['promo_offered']:(isset($row->promo_offered) ? $row->promo_offered:''));?>
+			</td>
+			
+		</tr>
+		<tr>
+			<td>
+				
+			</td>
+			<td>
+				
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+						
+			
+		</tr>				
+	</table>
 </div>
-<!- Other rows here -->
-<div style="float:left; margin-right:20px;">
-	<div class="content">
-		<div class="row"<?php echo $acct_txtbg; ?>>
-			<div class="left">Account1:</div>
-			<div class="right"><?php 
-									echo form_input($acct1);
-						 		?>
-			 </div>
-			<div class="clear"></div>
-		</div>
-		<div class="row">
-			<div class="left">Account2:</div>
-			<div class="right"><?php echo form_input($acct2);?></div>
-			<div class="clear"></div>
-		</div>
-		<div class="row">
-			<div class="left">Account3:</div>
-			<div class="right"><?php echo form_input($acct3);  ?></div>
-			<div class="clear"></div>
-		</div>
-		<div class="row">
-			<div class="left">Account4:</div>
-			<div class="right"><?php echo form_input($acct4); ?></div>
-			<div class="clear"></div>
-		</div>
-		<div class="row">
-			<div class="left">Account5:</div>
-			<div class="right">
-				<?php echo form_input($acct5);?>
-			</div>
-			<div class="clear"></div>
-		</div>
-	</div>
+<br>
+<div class= "grp_b">
+	<table align ="center">
+		<tr>
+			<td <?php echo $acct_txtbg; ?>>
+				Account1:
+			</td>
+			<td>
+				<?php echo form_input($acct1);  ?>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td <?php echo $dispo_txtbg; ?>>
+				Call Disposition:
+			</td>
+			<td>
+				<?php echo form_dropdown('call_dispo',$dropdown_calldispo, isset($_POST['call_dispo']) ? $_POST['call_dispo']:(isset($row->call_dispo) ? $row->call_dispo:''));?>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Account2:
+			</td>
+			<td>
+				<?php echo form_input($acct2);  ?>
+			</td>
+				<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td <?php echo $id_txtbg; ?>>
+				Call Recorded ID:
+			</td>
+			<td>
+				<?php echo form_input($call_record_id); ?>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Account3:
+			</td>
+			<td>
+				<?php echo form_input($acct3);  ?>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td <?php echo $web_txtbg;?>>
+				Web Enrollment?
+			</td>
+			<td>
+				<?php echo"Yes:";echo form_radio($question_yes);echo"&nbsp;&nbsp;&nbsp;No:";echo form_radio($question_no);?>
+			</td>
+		</tr>	
+		<tr>
+			<td>
+				Account4:
+			</td>
+			<td>
+				<?php echo form_input($acct4);  ?>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+				Web Disposition:
+			</td>
+			<td>
+				<?php echo form_dropdown('web_dispo',$dropdown_callwebdispo, isset($_POST['web_dispo']) ? $_POST['web_dispo']:(isset($row->web_dispo) ? $row->web_dispo:'')); ?>
+			</td>
+		</tr>	
+		<tr>
+			<td>
+				Account5:
+			</td>
+			<td>
+				<?php echo form_input($acct5);  ?>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>			
+			<td <?php echo $source_txtbg;?>>
+				Source:
+			</td>
+			
+			<td>
+				<?php echo form_dropdown('source',$dropdown_callsource, isset($_POST['source']) ? $_POST['source']:(isset($row->source) ? $row->source:''));?>
+			</td>
+			
+			
+		</tr>	
+	</table>
 </div>
-<!- Other rows here -->
-<div style="float:left; margin-right:20px; margin-top:-2px;">
-	<div class="content" >
-		<div class="row" <?php echo $dispo_txtbg; ?>>
-			<div class="left">Call Disposition:</div>
-			<div class="right"><?php echo form_dropdown('call_dispo',$dropdown_calldispo, isset($_POST['call_dispo']) ? $_POST['call_dispo']:(isset($row->call_dispo) ? $row->call_dispo:''));?></div>
-			<div class="clear"></div>
-		</div>
-		<div class="row" <?php echo $id_txtbg; ?>>
-			<div class="left">Call Recorded ID:</div>
-			<div class="right"><?php echo form_input($call_record_id); ?></div>
-			<div class="clear"></div>
-		</div>
-		<div class="row" <?php echo $web_txtbg;?>>
-			<div class="left">Web Enrollment?</div>
-			<div class="right"><?php echo"Yes:";echo form_radio($question_yes);echo"&nbsp;&nbsp;&nbsp;No:";echo form_radio($question_no);?></div>
-			<div class="clear"></div>
-		</div>
-		<div class="row">
-			<div class="left">Web Disposition:</div>
-			<div class="right"><?php echo form_dropdown('web_dispo',$dropdown_callwebdispo, isset($_POST['web_dispo']) ? $_POST['web_dispo']:(isset($row->web_dispo) ? $row->web_dispo:'')); ?></div>
-			<div class="clear"></div>
-		</div>
-	</div>
-</div>
-<!- Other rows here -->
-<div style="float:left; margin-left:-630px;">
-	<div class="remarks" style="background-color:#ECE9D8">
-		<div class="left">Remarks:</div>
-		<div class="right"><?php echo form_textarea($remarks); ?></div>
-		<div class="clear"></div>
-	</div>
-	<div class="button" style="float:left; margin-left:160px;"" >
-		<div class="left"><?php echo form_submit(array('name' => 'save', 'id' => 'save', ),'Save All'); ?></div>
-		<div class="right"><font size = "4"><?php echo '<a href="'.base_url().'user/call/">Cancel<a>';?></font></div>
-		<div class="clear"></div>
-	</div>
-	</div>
-	<div class="button" style="float:left; margin-left:160px;" >
-			<font color = #FF0000 face = arial>
-			<?php echo validation_errors(); ?>
+<br>
+<div class = "grp_c">
+	<table align ="center">
+		<tr>
+			<td>
+				Remarks:
+			</td>
+			<td>
+				<?php echo form_textarea($remarks); ?>
+			</td>	
+		</tr>	
+		<tr>
+			<td>
+			</td>
+			<td>
+				<div id ="but">
+					<?php echo form_submit(array('name' => 'save', 'id' => 'save', ),'Save All'); ?>
+				</div>
+			</td>
+			<td>
+			<font color=#FFFFFF face=Radioland size=3>
+				<?php echo '<a href="'.base_url().'user/call/">Cancel<a>';?>
 			</font>
-		<div class="clear"></div>
-	</div>
-</div>
+			</td>
+			
+		</tr>		
+	
+	</table>
 
+</div>
+<br>
+<div id="box">
+	 <font color = #FF0000 face = arial>
+			<?php echo validation_errors(); ?>
+	</font>
+	
+</div>
 
 <?php echo form_close(); ?>
+<br>

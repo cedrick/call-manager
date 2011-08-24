@@ -11,7 +11,9 @@ header( 'Pragma: no-cache' );
 <title>Call Manager</title>
 <link rel="shortcut icon" href="<?php echo base_url(); ?>template/images/favicon.ico" type="image/x-icon" />
 <link type="text/css" href="<?php echo base_url(); ?>template/style.css" rel="stylesheet" />
-<script type="text/javascript" src="<?php echo base_url(); ?>template/jquery.js"></script>
+<link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>library/ui-lightness/jquery-ui.css"  />
+<script type="text/javascript" src="<?php echo base_url(); ?>library/jquery.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>library/jquery-ui.min.js"></script>
 </head>
 <body>
 <?php

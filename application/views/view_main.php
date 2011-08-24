@@ -1,6 +1,6 @@
 <br><br>
 	<center>
-		<div class=view_main style="border-style:solid; border-color:#A7C198;">
+		<div class=view_main style="border-style:solid;  border-color:#E0E3E2;">
 		<?php
 			
 		echo form_open(base_url().'user/call');								
@@ -15,14 +15,25 @@
 		
 		?>
 		
-					<font color = #63200A face = arial>
+					
+			<table>
+				<tr>
+					<td>
+						<font color =  #FFFFFF face = Radioland size = 2>
 						Enter 10 Digits Phonenumber:
 					</font>
+					</td>
+					<td>
+						<?php echo form_input($phonenumber); ?>
+					</td>
+					<td>
+						<?php echo form_submit(array('name' => 'submit_name', 'id' => 'submit_id', ), 'Search'); ?>
+					</td>
+				</tr>
+			</table>
+					
 				
-					<?php echo form_input($phonenumber); ?>
-				<div class = "button_search">
-					<?php echo form_submit(array('name' => 'submit_name', 'id' => 'submit_id', ), 'Search'); ?>
-				</div>	
+			
 		
 		
 		<?php echo form_close(); ?>
