@@ -99,7 +99,8 @@ body {
 	
 	width:933px;
     height:180px;
-     border-radius:15px;
+    border-bottom-right-radius: 15px;
+	border-bottom-left-radius: 15px;
      border-style:solid;
      border-color:#E0E3E2;
      background-color:#ABADAC;
@@ -110,7 +111,8 @@ body {
 	
 	width:933px;
     height:275px;
-    border-radius:15px;
+    border-bottom-right-radius: 15px;
+	border-bottom-left-radius: 15px;
      border-style:solid;
      border-color:#E0E3E2;
      background-color:#ABADAC;
@@ -120,7 +122,31 @@ body {
 .sec_a{
 	
 	width:933px;
-    height:37px;
+    height:32px;
+	border-top-right-radius: 15px;
+	border-top-left-radius: 15px;
+     border-style:solid;
+     border-color:#E0E3E2;
+     background-color:#D9F0FE;
+     margin-left:150px; 
+}
+
+.sec_b{
+	
+	width:933px;
+    height:32px;
+	border-top-right-radius: 15px;
+	border-top-left-radius: 15px;
+     border-style:solid;
+     border-color:#E0E3E2;
+     background-color:#D9F0FE;
+     margin-left:150px; 
+}
+
+.sec_c{
+	
+	width:933px;
+    height:32px;
 	border-top-right-radius: 15px;
 	border-top-left-radius: 15px;
      border-style:solid;
