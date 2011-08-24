@@ -312,6 +312,7 @@ $(document).ready(function(){
 			}
 	?>
    				
+<div class = "sec_a"><font color="#000000" face = "Arial Black" size = "3">Personal Information</font></div>
 <div class= "grp_a">
 	<table align ="center">
 		<tr>
