@@ -172,3 +172,16 @@ body {
      background-color:#ABADAC;
      margin-left:150px; 
 }
+
+.cancel{
+	width:74px;
+	height:21px;	
+	 border-radius:8px;
+	 border-style:solid;
+	 border-color:#0C0B0B;
+     background-color:#FFFFFF;
+}
+
+.cancel:hover{
+	text-shadow: 1px 1px 1px #0C0B0B;
+}
