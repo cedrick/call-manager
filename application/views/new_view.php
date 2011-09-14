@@ -12,20 +12,22 @@ echo "</script>";
 }
 ?>
 <script type="text/javascript">
-$(document).ready(function(){
-	$("#but").click(function(){
-	
-		$(function() {
-			// a workaround for a flaw in the demo system (http://dev.jqueryui.com/ticket/4375), ignore!
-			//$( "#box" ).dialog( "destroy" );
-		
-			$( "#box" ).dialog({
-				height: 140,
-				modal: true
-			});
-		});
-	});
-});
+//$(document).ready(function(){
+	//$("#but").click(function(){
+
+		// a workaround for a flaw in the demo system (http://dev.jqueryui.com/ticket/4375), ignore!
+		//$( "#box" ).dialog( "destroy" );
+
+		//$( "#box" ).dialog({
+			//modal: true,
+			//buttons: {
+				//Ok: function() {
+					//$( this ).dialog( "close" );
+				//}
+			//}
+		//});
+	//});
+//});
 </script> 
 <?php 
 	
@@ -313,6 +315,12 @@ $(document).ready(function(){
 				}
 			}
 	?>
+<div id="box">
+	 <font color = #FF0000 face = arial>
+			<?php echo validation_errors(); ?>
+	</font>
+	
+</div>
 <div class = "sec_a"><font color="#ABADAC" face = "Arial Black" size = "3">&nbsp;&nbsp;&nbsp;Account Information</font></div>
 <div class= "grp_a">
 	<table align ="center">
@@ -742,9 +750,9 @@ $(document).ready(function(){
 				</div>
 			</td>
 			<td>
-			<font color=#FFFFFF face=Radioland size=3>
-				<?php echo '<a href="'.base_url().'user/call/">Cancel<a>';?>
-			</font>
+				<div class = "cancel">
+						&nbsp;&nbsp;&nbsp;&nbsp;<?php echo '<a href="'.base_url().'user/call/"><font color=#070707 size=2>Cancel</font><a>';?>
+				</div>
 			</td>
 			
 		</tr>		
@@ -753,12 +761,7 @@ $(document).ready(function(){
 
 </div>
 <br>
-<div id="box">
-	 <font color = #FF0000 face = arial>
-			<?php echo validation_errors(); ?>
-	</font>
-	
-</div>
+
 
 <?php echo form_close(); ?>
 <br>

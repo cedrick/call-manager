@@ -25,9 +25,6 @@ if($this->session->userdata('username'))
 			$this->load->view('header');
 		}
  ?>
-<?php 
-			$this->load->view('liner');
-?>
 
 <?php  
 	if (!isset($data)) {

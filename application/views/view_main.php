@@ -19,7 +19,7 @@
 			<table>
 				<tr>
 					<td>
-						<font color =  #FFFFFF face = Radioland size = 2>
+						<font color =  #FFFFFF  size = 3>
 						Enter 10 Digits Phonenumber:
 					</font>
 					</td>
